@@ -43,6 +43,3 @@ website/i18n/**/*
 #!website/i18n/fr/**/*
 
 .netlify
-
-project-documentation/docs*
-project-documentation/blog*
