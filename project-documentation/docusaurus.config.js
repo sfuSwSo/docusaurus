@@ -4,6 +4,14 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const listRemote = require('./configHelper');
+
+const docsRepo = listRemote.createRepo(
+  'sfuSwSo',
+  'documentation',
+  'main'
+);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'My Site',
@@ -66,6 +74,26 @@ const config = {
         path: 'docs-resume-evaluator',
         routeBasePath: 'docs-resume-evaluator',
         sidebarPath: require.resolve('./sidebars.js')
+      },
+    ],
+    [
+      "docusaurus-plugin-remote-content",
+      {
+          name: "main-docs",
+          sourceBaseUrl: listRemote.buildRepoRawBaseUrl(docsRepo), // the base url for the markdown (gets prepended to all of the documents when fetching)
+          outDir: ".",
+          documents: listRemote.listDocuments(
+            docsRepo,
+            [
+              'docs*/**/*.md',
+              'docs*/**/*.png',
+              'docs*/**/*.jpg',
+              'docs*/**/*.jpeg',
+              'docs*/**/*.pdf',
+              'docs*/**/*.ppt',
+              'docs*/**/*.pptx'
+            ]
+          ),
       },
     ],
   ],
