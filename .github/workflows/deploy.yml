@@ -23,5 +23,5 @@ jobs:
         working-directory: project-documentation
 
       - name: Build and Deploy website
-        run: GIT_USER=$DEPLOYMENT_AUTHOR yarn deploy
+        run: GIT_USER=${{ vars.DEPLOYMENT_AUTHOR }} yarn deploy
         working-directory: project-documentation
