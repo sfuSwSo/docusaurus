@@ -18,12 +18,10 @@ jobs:
           node-version: 18
           cache: yarn
 
-      - name: Move to documentation website
-        run: cd project-documentation
-      - name: Current Directory
-        run: ls
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+        working-directory: project-documentation
+
       - name: Build and Deploy website
         run: GIT_USER=$DEPLOYMENT_AUTHOR yarn deploy
+        working-directory: project-documentation
