@@ -14,7 +14,7 @@ const config = {
   url: 'https://sfuswso.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/docusaurus/',
   trailingSlash: false,
 
   // GitHub pages deployment config.
