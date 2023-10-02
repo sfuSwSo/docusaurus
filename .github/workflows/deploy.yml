@@ -20,9 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+        working-directory: project-documentation
 
       - name: Build website
         run: yarn build
+        working-directory: project-documentation
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
