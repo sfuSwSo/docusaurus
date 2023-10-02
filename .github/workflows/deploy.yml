@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Move to documentation website
-        run: cd project-documentation
+        run: ls
       - name: Current Directory
         run: pwd
       - uses: actions/checkout@v3
