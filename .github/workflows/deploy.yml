@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Build website
+      - name: Build project-documentation
         run: yarn build
 
       # Popular action to deploy to GitHub Pages:
