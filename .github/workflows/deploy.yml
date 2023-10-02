@@ -19,9 +19,9 @@ jobs:
           cache: yarn
 
       - name: Move to documentation website
-        run: ls
+        run: cd project-documentation
       - name: Current Directory
-        run: pwd
+        run: ls
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
